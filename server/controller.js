@@ -26,14 +26,16 @@ module.exports = {
     res.status(200).send(randomFortune);
   },
   addFortune: (req, res) => {
-    const addFortune = req.body.fortune;
+    const addFortune = req.body.value;
     fortune.push(addFortune);
+    console.log(addFortune)
     res.status(200).send(addFortune);
   },
   updateFortune: (req, res) => {
     console.log(fortune);
     const addFortune = req.body.fortune;
     const indexFortune = req.body.index;
+
     fortune.splice(indexFortune, 1, addFortune);
     console.log(fortune);
     res.status(200).send(addFortune);

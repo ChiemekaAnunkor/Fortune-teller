@@ -22,7 +22,7 @@ const getFortune = () => {
 const postFortune = () => {
   let inputs = document.getElementById("fortune").value;
 
-  axios.post("http://localhost:4000/api/fortune/", inputs).then((res) => {
+  axios.post("http://localhost:4000/api/fortune/", { value: inputs }).then((res) => {
     const data = res.data;
   });
   console.log(inputs);
